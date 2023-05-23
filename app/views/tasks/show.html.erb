@@ -1,3 +1,7 @@
 <h1><%= @task.title %></h1>
 <p>Details: <%= @task.details %></p>
-<p>Completed?: <%= (@task.completed ? "[x]" : "[_]") %></p>
+<p>Completed?: <%= (@task.completed ? "<i class='fa-regular fa-square-check'></i>".html_safe : "<i class='fa-light fa-square'></i>".html_safe) %></p>
+
+<%= link_to 'Back to tasks', tasks_path %> //
+<%= link_to 'Edit Task', edit_task_path %> //
+<%= link_to 'Destroy Task', task_path(@task), data: {turbo_method: 'DELETE', turbo_confirm: 'Are you sure?' } %>
